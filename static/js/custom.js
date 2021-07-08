@@ -41,6 +41,10 @@ jQuery(function($){
 	/*  2. SUPERSLIDES SLIDER
 	/* ----------------------------------------------------------- */
 	$('#slides').superslides({
+	  play: 10000,
+      animation_speed: 600,
+      animation_easing: 'swing',
+      animation: 'slide',
       animation: 'fade',
       animation_easing: 'linear',
       pagination: 'true'
