@@ -117,7 +117,7 @@ body,html{
 
 #topbar {
   background: rgba(24, 23, 88, 1);
-  padding: 10px 0;
+  padding: 5px 0;
   border-bottom: 1px solid #eee;
   font-size: 14px;
     width: 100%;
@@ -125,12 +125,12 @@ body,html{
 
 .float-left {
     float: left;
-  padding-left: 150px;
+  padding-left: 145px;
 }
 
 .float-right {
     float: right;
-  padding-right: 150px;
+  padding-right: 110px;
 }
 
 .text-white {
@@ -197,12 +197,12 @@ body,html{
     display:block;
     height:68px;
     margin-top: -22px; 
+    margin-left: -15px; 
   }
 
   .lang-change{
     color: #000;
     font-size: 15px;
-    font-weight: bold;
     margin-top: 25px; 
   }
   
@@ -236,10 +236,9 @@ body,html{
     background-color: transparent;
   }
   .navbar-nav > li > .dropdown-menu {
-    background-color: #48575a; 
+    background-color: rgba(24, 23, 88, 1); 
   }
   .navbar-nav > li > .dropdown-menu:before { 
-    border-bottom: 15px solid #48575a; 
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     content: "";
@@ -263,7 +262,7 @@ body,html{
     border-bottom: medium none;
   }
   .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
-    background-color:transparent;  
+    background-color: rgba(229, 169, 42, 1);  
     text-decoration: none;
   }
   .dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover {
@@ -274,6 +273,13 @@ body,html{
   }
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
     background-color: transparent;
+  }
+  .pr-2 {
+   padding-right: 10px;
+  }
+  
+  .nav-bottom {
+    background-color: rgba(182, 139, 32, 1);
   }
   
   /*--------------------*/
