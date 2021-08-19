@@ -1,10 +1,4 @@
 /**	
-	* Template Name: WpF Degree - Ultra Responsive Bootstrap Educational Html5 Template
-	* Version: 1.0	
-	* Template Scripts
-	* Author: WpFreeware Team
-	* Author URI: http://wpfreeware.com/
-
 	Custom JS
 	
 	1. DROPDOWN MENU
@@ -20,11 +14,9 @@
 	11. GALLERY SLIDER
 	12. SCROLL TOP BUTTON
 	13. SCROLL UP BUTTON	 	
-	
 **/
 
 jQuery(function($){
-
 
 	/* ----------------------------------------------------------- */
   /*  1. DROPDOWN MENU
@@ -64,8 +56,6 @@ jQuery(function($){
     $('.single_notice_pane').resize();
 	});   
     
-
-
 	/* ----------------------------------------------------------- */
 	/*  4. SKILL CIRCLE
 	/* ----------------------------------------------------------- 
@@ -89,7 +79,6 @@ jQuery(function($){
       }
     );
     wow.init();
-
 
 	/* ----------------------------------------------------------- */
 	/*  6. COURSE SLIDER
@@ -175,13 +164,10 @@ jQuery(function($){
 	  ]
 	});
 		
-
 	/* ----------------------------------------------------------- */
 	/*  8. BOOTSTRAP TOOLTIP
 	/* ----------------------------------------------------------- */
 		$('.soc_tooltip').tooltip('hide')
-
-
 
 	/* ----------------------------------------------------------- */
 	/*  9. PRELOADER 
@@ -196,7 +182,6 @@ jQuery(function($){
             fadeOutTime: 1000
         });
     });*/
-
 
     /* ----------------------------------------------------------- */
 	/*  10. EVENTS SLIDER

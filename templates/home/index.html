@@ -55,7 +55,10 @@
         <!-- Start about us area -->
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="aboutus_area wow fadeInLeft">
-            <h2 class="titile">About Us</h2>
+            <div class="title_area">
+              <h2 class="title_two">Welcome</h2>
+              <span></span> 
+            </div>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
           </div>
         </div>
@@ -254,6 +257,38 @@
     </section>
     <!--=========== END ABOUT US SECTION ================--> 
 
+    <!--=========== BEGIN OUR COURSES SECTION ================-->
+    <section id="ourCourses">
+      <div class="container">
+        <div class="row">
+        <!-- Start about us area -->
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="single_course">
+            <div class="singCourse_imgarea">
+              <img src="{% static 'img/course-1.jpg' %}" />
+              <div class="mask">                         
+                <a href="#" class="course_more">Email</a>
+              </div>
+            </div>
+            <div class="singCourse_content">
+            <h3 class="singCourse_title"><a href="#">hhhhhhhhh</a></h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="aboutus_area wow fadeInLeft">
+            <div class="title_area">
+              <h2 class="title_two">Principal Message</h2>
+              <span></span> 
+            </div>
+            <p>"Utilizing all available physical & human resources, it is our prime objective to make a wellbalanced, well adjusted, creative and an environment-friendly child having high ideals of morality; who will be able to cope with Social & Economic challenges with a sense of fraternal & collective responsibility."</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!--=========== END OUR COURSES SECTION ================-->
+
     <!--=========== BEGIN OUR TUTORS SECTION ================-->
     <section id="ourTutors">
       <div class="container">
@@ -261,7 +296,7 @@
         <div class="row">
           <div class="col-lg-12 col-md-12"> 
             <div class="title_area">
-              <h2 class="title_two">Our Tutors</h2>
+              <h2 class="title_two">Vice Principals</h2>
               <span></span> 
             </div>
           </div>
@@ -274,66 +309,19 @@
             <div class="ourTutors_content">
               <!-- Start Tutors nav -->
               <ul class="tutors_nav">
+                {% for vice_principal in vice_principals %}
                 <li>
                   <div class="single_tutors">
                     <div class="tutors_thumb">
-                      <img src="{% static 'img/author.jpg' %}" />                      
+                      <img src="{{ vice_principal.image.url }}" />                      
                     </div>
                     <div class="singTutors_content">
-                      <h3 class="tutors_name">Jame Burns</h3>
-                      <span>Technology Teacher</span>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                      <h3 class="tutors_name">{{ vice_principal.name }}</h3>
+                      <span>Vice Principal</span>
                     </div>
                   </div>
                 </li>
-                <li>
-                  <div class="single_tutors">
-                    <div class="tutors_thumb">
-                      <img src="{% static 'img/course-1.jpg' %}" />                      
-                    </div>
-                    <div class="singTutors_content">
-                      <h3 class="tutors_name">Jame Burns</h3>
-                      <span>Technology Teacher</span>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="single_tutors">
-                    <div class="tutors_thumb">
-                      <img src="{% static 'img/author.jpg' %}" />                      
-                    </div>
-                    <div class="singTutors_content">
-                      <h3 class="tutors_name">Jame Burns</h3>
-                      <span>Technology Teacher</span>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="single_tutors">
-                    <div class="tutors_thumb">
-                      <img src="{% static 'img/course-1.jpg' %}" />                      
-                    </div>
-                    <div class="singTutors_content">
-                      <h3 class="tutors_name">Jame Burns</h3>
-                      <span>Technology Teacher</span>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="single_tutors">
-                    <div class="tutors_thumb">
-                      <img src="{% static 'img/author.jpg' %}" />                      
-                    </div>
-                    <div class="singTutors_content">
-                      <h3 class="tutors_name">Jame Burns</h3>
-                      <span>Technology Teacher</span>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                  </div>
-                </li>                                            
+                {% endfor %}                                         
               </ul>
             </div>
           </div>
@@ -343,328 +331,59 @@
     </section>
     <!--=========== END OUR TUTORS SECTION ================-->
 
-    <!--=========== BEGIN WHY US SECTION ================-->
-    <section id="whyUs">
-      <!-- Start why us top -->
-      <div class="row">        
-        <div class="col-lg-12 col-sm-12">
-          <div class="whyus_top">
-            <div class="container">
-              <!-- Why us top titile -->
-              <div class="row">
-                <div class="col-lg-12 col-md-12"> 
-                  <div class="title_area">
-                    <h2 class="title_two">Why Us</h2>
-                    <span></span> 
-                  </div>
-                </div>
-              </div>
-              <!-- End Why us top titile -->
-              <!-- Start Why us top content  -->
-              <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                  <div class="single_whyus_top wow fadeInUp">
-                    <div class="whyus_icon">
-                      <span class="fa fa-desktop"></span>
-                    </div>
-                    <h3>Technology</h3>
-                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                  <div class="single_whyus_top wow fadeInUp">
-                    <div class="whyus_icon">
-                      <span class="fa fa-users"></span>
-                    </div>
-                    <h3>Best Tutor</h3>
-                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                  <div class="single_whyus_top wow fadeInUp">
-                    <div class="whyus_icon">
-                      <span class="fa fa-flask"></span>
-                    </div>
-                    <h3>Practical Training</h3>
-                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                  <div class="single_whyus_top wow fadeInUp">
-                    <div class="whyus_icon">
-                      <span class="fa fa-support"></span>
-                    </div>
-                    <h3>Support</h3>
-                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                  </div>
-                </div>
-              </div>
-              <!-- End Why us top content  -->
+     <!--=========== BEGIN ABOUT US SECTION ================-->
+     <section id="aboutUs">
+      <div class="container">
+        <div class="row">
+        <!-- Start about us area -->
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="single_blog_archive wow fadeInUp">
+            <div class="blogimg_container">
+              <a href="#" class="blog_img">
+                <img alt="img" src="{% static 'img/slider/01.jpeg' %}">
+              </a>
             </div>
           </div>
-        </div>        
-      </div>
-      <!-- End why us top -->
-
-      <!-- Start why us bottom -->
-      <div class="row">        
-        <div class="col-lg-12 col-sm-12">
-          <div class="whyus_bottom">            
-            <div class="slider_overlay"></div>
-            <div class="container">               
-              <div class="skills">                
-                <!-- START SINGLE SKILL-->
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                 <div class="single_skill wow fadeInUp">
-                   <div id="myStat" data-dimension="150" data-text="35%" data-info="" data-width="10" data-fontsize="25" data-percent="35" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
-                    <h4>Repeate Learners</h4>                      
-                  </div>
-                </div>
-                <!-- START SINGLE SKILL-->
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                  <div class="single_skill wow fadeInUp">
-                    <div id="myStathalf2" data-dimension="150" data-text="90%" data-info="" data-width="10" data-fontsize="25" data-percent="90" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
-                    <h4>Success Rate</h4>
-                  </div>
-                </div>
-                <!-- START SINGLE SKILL-->
-                <div class="col-lg-3 col-md-3 col-sm-3">                 
-                  <div class="single_skill wow fadeInUp">
-                    <div id="myStat2" data-dimension="150" data-text="100%" data-info="" data-width="10" data-fontsize="25" data-percent="100" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
-                    <h4>Student Engagement</h4>
-                  </div>
-                </div>
-                <!-- START SINGLE SKILL-->
-                <div class="col-lg-3 col-md-3 col-sm-3">                 
-                  <div class="single_skill wow fadeInUp">
-                    <div id="myStat3" data-dimension="150" data-text="65%" data-info="" data-width="10" data-fontsize="25" data-percent="65" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
-                    <h4>Certified Courses</h4>
-                  </div>
-                </div>
-              </div>
-            </div>            
-          </div>
-        </div>        
-      </div>
-      <!-- End why us bottom -->
-    </section>
-    <!--=========== END WHY US SECTION ================-->
-
-    <!--=========== BEGIN OUR COURSES SECTION ================-->
-    <section id="ourCourses">
-      <div class="container">
-       <!-- Our courses titile -->
-        <div class="row">
-          <div class="col-lg-12 col-md-12"> 
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="aboutus_area wow fadeInLeft">
             <div class="title_area">
-              <h2 class="title_two">Our Courses</h2>
+              <h2 class="title_two">Our Mission</h2>
               <span></span> 
             </div>
+            <p>"Utilizing all available physical & human resources, it is our prime objective to make a wellbalanced, well adjusted, creative and an environment-friendly child having high ideals of morality; who will be able to cope with Social & Economic challenges with a sense of fraternal & collective responsibility."</p>
           </div>
         </div>
-        <!-- End Our courses titile -->
-        <!-- Start Our courses content -->
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="ourCourse_content">
-              <ul class="course_nav">
-                <li>
-                  <div class="single_course">
-                    <div class="singCourse_imgarea">
-                      <img src="{% static 'img/course-1.jpg' %}" />
-                      <div class="mask">                         
-                        <a href="#" class="course_more">View Course</a>
-                      </div>
-                    </div>
-                    <div class="singCourse_content">
-                    <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
-                    <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                    </div>
-                    <div class="singCourse_author">
-                      <img src="{% static 'img/author.jpg' %}" alt="img">
-                      <p>Richard Remus, Teacher</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="single_course">
-                    <div class="singCourse_imgarea">
-                      <img src="{% static 'img/course-2.jpg' %}" />
-                      <div class="mask">                         
-                        <a href="#" class="course_more">View Course</a>
-                      </div>
-                    </div>
-                    <div class="singCourse_content">
-                    <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
-                    <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                    </div>
-                    <div class="singCourse_author">
-                      <img src="{% static 'img/author.jpg' %}" alt="img">
-                      <p>Richard Remus, Teacher</p>
-                    </div>
-                  </div>
-                </li> 
-                <li>
-                  <div class="single_course">
-                    <div class="singCourse_imgarea">
-                      <img src="{% static 'img/course-1.jpg' %}" />
-                      <div class="mask">                         
-                        <a href="#" class="course_more">View Course</a>
-                      </div>
-                    </div>
-                    <div class="singCourse_content">
-                    <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
-                    <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                    </div>
-                    <div class="singCourse_author">
-                      <img src="{% static 'img/author.jpg' %}" alt="img">
-                      <p>Richard Remus, Teacher</p>
-                    </div>
-                  </div>
-                </li>  
-                <li>
-                  <div class="single_course">
-                    <div class="singCourse_imgarea">
-                      <img src="{% static 'img/course-2.jpg' %}" />
-                      <div class="mask">                         
-                        <a href="#" class="course_more">View Course</a>
-                      </div>
-                    </div>
-                    <div class="singCourse_content">
-                    <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
-                    <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                    </div>
-                    <div class="singCourse_author">
-                      <img src="{% static 'img/author.jpg' %}" alt="img">
-                      <p>Richard Remus, Teacher</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="single_course">
-                    <div class="singCourse_imgarea">
-                      <img src="{% static 'img/course-1.jpg' %}" />
-                      <div class="mask">                         
-                        <a href="#" class="course_more">View Course</a>
-                      </div>
-                    </div>
-                    <div class="singCourse_content">
-                    <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
-                    <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                    </div>
-                    <div class="singCourse_author">
-                      <img src="{% static 'img/author.jpg' %}" alt="img">
-                      <p>Richard Remus, Teacher</p>
-                    </div>
-                  </div>
-                </li> 
-                <li>
-                  <div class="single_course">
-                    <div class="singCourse_imgarea">
-                      <img src="{% static 'img/course-2.jpg' %}" />
-                      <div class="mask">                         
-                        <a href="#" class="course_more">View Course</a>
-                      </div>
-                    </div>
-                    <div class="singCourse_content">
-                    <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
-                    <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                    </div>
-                    <div class="singCourse_author">
-                      <img src="{% static 'img/author.jpg' %}" alt="img">
-                      <p>Richard Remus, Teacher</p>
-                    </div>
-                  </div>
-                </li>                
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- End Our courses content -->
+      </div>
       </div>
     </section>
-    <!--=========== END OUR COURSES SECTION ================-->  
-
-    
-
-    <!--=========== BEGIN STUDENTS TESTIMONIAL SECTION ================-->
-    <section id="studentsTestimonial">
+    <!--=========== END ABOUT US SECTION ================-->
+     <!--=========== BEGIN ABOUT US SECTION ================-->
+     <section id="aboutUs">
       <div class="container">
-       <!-- Our courses titile -->
         <div class="row">
-          <div class="col-lg-12 col-md-12"> 
+        <!-- Start about us area -->
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="aboutus_area wow fadeInLeft">
             <div class="title_area">
-              <h2 class="title_two">What our Student says</h2>
+              <h2 class="title_two">Our Vision</h2>
               <span></span> 
             </div>
+            <p>"To build up as one of the thriving, prominent schools in Sri Lanka for socializing a set of children to take up challenges"</p>
           </div>
         </div>
-        <!-- End Our courses titile -->
-
-        <!-- Start Our courses content -->
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="studentsTestimonial_content">              
-              <div class="row">
-                <!-- start single student testimonial -->
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_stsTestimonial wow fadeInUp">
-                    <div class="stsTestimonial_msgbox">
-                      <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                    </div>
-                    <img class="stsTesti_img" src="{% static 'img/author.jpg' %}" alt="img">
-                    <div class="stsTestimonial_content">
-                      <h3>Johnathan Doe</h3>                      
-                      <span>Ex. Student</span>
-                      <p>Software Department</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- End single student testimonial -->
-                <!-- start single student testimonial -->
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_stsTestimonial wow fadeInUp">
-                    <div class="stsTestimonial_msgbox">
-                      <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book.scrambled it to make a type specimen book</p>
-                    </div>
-                    <img class="stsTesti_img" src="{% static 'img/author.jpg' %}" alt="img">
-                    <div class="stsTestimonial_content">
-                      <h3>Johnathan Doe</h3>                      
-                      <span>Ex. Student</span>
-                      <p>Software Department</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- End single student testimonial -->
-                <!-- start single student testimonial -->
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="single_stsTestimonial wow fadeInUp">
-                    <div class="stsTestimonial_msgbox">
-                      <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-                    </div>
-                    <img class="stsTesti_img" src="{% static 'img/author.jpg' %}" alt="img">
-                    <div class="stsTestimonial_content">
-                      <h3>Johnathan Doe</h3>                      
-                      <span>Ex. Student</span>
-                      <p>Software Department</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- End single student testimonial -->
-              </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="single_blog_archive wow fadeInUp">
+            <div class="blogimg_container">
+              <a href="#" class="blog_img">
+                <img alt="img" src="{% static 'img/slider/01.jpeg' %}">
+              </a>
             </div>
           </div>
         </div>
-        <!-- End Our courses content -->
+      </div>
       </div>
     </section>
-    <!--=========== END STUDENTS TESTIMONIAL SECTION ================-->    
-    
+    <!--=========== END ABOUT US SECTION ================-->
     
 {% endblock content %}

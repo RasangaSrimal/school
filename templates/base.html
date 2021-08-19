@@ -63,13 +63,12 @@
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  
                         <div class="container clearfix topbar" id="topbar">
                                 <div class="contact-info float-left">
-                                        <i class="fa fa-envelope-o text-white"></i> <a href="mailto:bpcht.japan@gmail.com" class="text-white">aaaaaa@gmail.com</a>
-                                        <i class="fa fa-phone text-white"></i><span class="text-white"> ＋94‐xx-xxx-xxxx</span>
+                                        <i class="fa fa-envelope-o text-white"></i> <a href="mailto:northkanumuldeniya@gmail.com" class="text-white">northkanumuldeniya@gmail.com</a>
+                                        <i class="fa fa-phone text-white"></i><span class="text-white"> ＋94‐47-225-4751</span>
                                 </div>
                                 <div class="social-links float-right">
                                         <a href="https://www.facebook.com/KanumuldeniyaNorthNavodyaSchool" class="facebook"><i class="fa fa-facebook text-white"></i></a>
                                         <a href="#" class="linkedin"><i class="fa fa-linkedin text-white"></i></a>
-                                        
                                         <a href="#" class="twitter"><i class="fa fa-twitter text-white"></i></a>
                                         <a href="#" class="instagram"><i class="fa fa-instagram text-white"></i></a>
                                         <a href="#" class="google-plus"><i class="fa fa-google-plus text-white"></i></a>
@@ -94,34 +93,36 @@
 					  <!-- LOGO -->
 					  <!-- IMG BASED LOGO  -->
 					  <a class="navbar-brand logo" href="{% url 'home:home' %}"><img src="{% static 'img/logo.png' %}" class="logo"></a>
+					  <!-- <a class="navbar-brand logo" href="#aboutUs"><img src="{% static 'img/logo.png' %}" class="logo"></a> -->
 					  <!-- TEXT BASED LOGO -->
 					  <a class="navbar-brand" href="{% url 'home:home' %}">KNNS</a>              
-							 
 					</div>
 				<div id="navbar1" class="navbar-collapse collapse">
 				  <ul id="top-menu" class="nav navbar-nav main-nav navbar-right lang-change">
 					<li><a href="{% url 'home:courses' %}">{% trans "Home" %}</a></li>
 					<li><a href="{% url 'home:contact' %}">{% trans "Contact us" %}</a></li>
 					<li class="pr-2">
-                                                        <form  action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                                                                <input name="next" type="hidden" value="{{ redirect_to }}">
-                                                                <select name="language" class="btn btn-outline-success my-2 my-sm-0">
-                                                                        {% get_current_language as LANGUAGE_CODE %}
-                                                                        {% get_available_languages as LANGUAGES %}
-                                                                        {% get_language_info_list for LANGUAGES as languages %}
-                                                                        {% for language in languages %}
-                                                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                                                                        {{ language.name_local }}
-                                                                        </option>
-                                                                        {% endfor %}
-                                                                </select>
-                                                                <input class=" btn btn-outline-success my-2 my-sm-0" type="submit" value="Change">
-                                                        </form> 
-                                                </li>
-					<li><form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form></li>
+						<form  action="{% url 'set_language' %}" method="post">{% csrf_token %}
+							<input name="next" type="hidden" value="{{ redirect_to }}">
+							<select name="language" class="btn btn-outline-success my-2 my-sm-0">
+								{% get_current_language as LANGUAGE_CODE %}
+								{% get_available_languages as LANGUAGES %}
+								{% get_language_info_list for LANGUAGES as languages %}
+								{% for language in languages %}
+								<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+								{{ language.name_local }}
+								</option>
+								{% endfor %}
+							</select>
+							<input class=" btn btn-outline-success my-2 my-sm-0" type="submit" value="Change">
+						</form> 
+					</li>
+					<li>
+						<form class="form-inline my-2 my-lg-0">
+					  		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					  		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+						</form>
+					</li>
 
 				  </ul>           
 			</div>
@@ -130,10 +131,10 @@
 				<div id="navbar" class="navbar-collapse collapse">
 				  <ul id="top-menu" class="nav navbar-nav main-nav">
 					<li class="dropdown">
-					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Identity<span class="caret"></span></a>
+					  <a href="{% url 'home:identity' %}" class="dropdown-toggle" data-toggle="dropdown" data-target="{% url 'home:identity' %}" role="button" aria-expanded="false">Identity<span class="caret"></span></a>
 					  <ul class="dropdown-menu" role="menu">
 						<li><a href="404.html">Motto</a></li>
-						<li><a href="#">Flag</a></li>
+						<li><a href="{% url 'home:identity' %}">Flag</a></li>
 						<li><a href="#">Anthem</a></li>               
 						<li><a href="#">Uniform</a></li>               
 					  </ul>
