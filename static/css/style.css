@@ -1394,6 +1394,7 @@ body,html{
   .single_blog p {
     line-height: 25px;
     font-size: 15px;
+    text-indent: 40px;
   }
   .single_blog blockquote{
     border-left: none;

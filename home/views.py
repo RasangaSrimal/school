@@ -1,4 +1,4 @@
-from home.models import VicePrincipal
+from home.models import Principal, VicePrincipal
 from django.shortcuts import render
 
 # Create your views here.
@@ -20,3 +20,7 @@ def courses(request):
 
 def identity(request):
     return render(request, 'home/identity.html')
+
+def history(request):
+    principals = Principal.objects.all()
+    return render(request, 'home/history.html', {'principals':principals})

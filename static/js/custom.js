@@ -229,5 +229,38 @@ jQuery(function($){
     	}, 1500, 'easeInOutExpo');
     	return false;
       });
+
+	function getCookie(name) {
+		var cookieValue = null;
+		if (document.cookie && document.cookie != '') {
+				var cookies = document.cookie.split(';');
+				for (var i = 0; i < cookies.length; i++) {
+					var cookie = jQuery.trim(cookies[i]);
+					if (cookie.substring(0, name.length + 1) == (name + '=')) {
+						cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+						break;
+					}
+				}
+		}
+		return cookieValue;
+	}
+
+	  $("#like-button").click(function(){
+		$.ajax({
+				type: 'POST',
+				url: '',
+				data: JSON.stringify({
+						postid: $('#like-button').val(),
+						csrfmiddlewaretoken: getCookie('csrftoken'),
+						action: 'post'
+				}),
+				success: function (json) {
+						document.getElementById("like_count").innerHTML = json['result']
+				},
+				error: function (xhr, errmsg, err) {
+
+				},
+		});
+});
 	
 });
