@@ -15,11 +15,17 @@ def gallery(request):
 def events(request):
     return render(request, 'home/events.html')
 
-def courses(request):
-    return render(request, 'home/courses.html')
+def news(request):
+    return render(request, 'home/news.html')
 
 def identity(request):
     return render(request, 'home/identity.html')
+
+def academic(request):
+    return render(request, 'home/academic.html')
+
+def achievements(request):
+    return render(request, 'home/achievements.html')
 
 def history(request):
     principals = Principal.objects.all()
