@@ -116,8 +116,8 @@
 					</div>
 				<div id="navbar1" class="navbar-collapse collapse">
 				  <ul id="top-menu" class="nav navbar-nav main-nav navbar-right lang-change">
-					<li><a href="{% url 'home:home' %}">{% trans "Home" %}</a></li>
-					<li><a href="{% url 'home:contact' %}">{% trans "Contact us" %}</a></li>
+					<li><a href="{% url 'home:home' %}">{% trans "home" %}</a></li>
+					<li><a href="{% url 'home:contact' %}">{% trans "contact us" %}</a></li>
 					<li class="pr-2">
 						<form  action="{% url 'set_language' %}" method="post">{% csrf_token %}
 							<input name="next" type="hidden" value="{{ redirect_to }}">
@@ -131,13 +131,13 @@
 								</option>
 								{% endfor %}
 							</select>
-							<input class=" btn btn-outline-success my-2 my-sm-0" type="submit" value="Change">
+							<input class=" btn btn-outline-success my-2 my-sm-0" type="submit" value="{% trans "Change" %}">
 						</form> 
 					</li>
 					<li>
 						<form class="form-inline my-2 my-lg-0">
-					  		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					  		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+					  		<input class="form-control mr-sm-2" type="search" placeholder="{% trans "Search" %}" aria-label="Search">
+					  		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">{% trans "Search" %}</button>
 						</form>
 					</li>
 
@@ -148,48 +148,48 @@
 				<div id="navbar" class="navbar-collapse collapse">
 				  <ul id="top-menu" class="nav navbar-nav main-nav">
 					<li class="dropdown">
-					  <a href="{% url 'home:identity' %}" class="dropdown-toggle" data-toggle="dropdown" data-target="{% url 'home:identity' %}" role="button" aria-expanded="false">Identity<span class="caret"></span></a>
+					  <a href="{% url 'home:identity' %}" class="dropdown-toggle" data-toggle="dropdown" data-target="{% url 'home:identity' %}" role="button" aria-expanded="false">{% trans "Identity" %}<span class="caret"></span></a>
 					  <ul class="dropdown-menu" role="menu">
-						<li><a href="404.html">Motto</a></li>
-						<li><a href="{% url 'home:identity' %}">Flag</a></li>
-						<li><a href="#">Anthem</a></li>               
-						<li><a href="#">Uniform</a></li>               
+						<li><a href="404.html">{% trans "Motto" %}</a></li>
+						<li><a href="{% url 'home:identity' %}">{% trans "Flag" %}</a></li>
+						<li><a href="#">{% trans "Anthem" %}</a></li>               
+						<li><a href="#">{% trans "Uniform" %}</a></li>               
 					  </ul>
 					</li>               
 					<li class="dropdown">
-					  <a href="{% url 'home:history' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">History<span class="caret"></span></a>
+					  <a href="{% url 'home:history' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{% trans "History" %}<span class="caret"></span></a>
 					  <ul class="dropdown-menu" role="menu">
-						<li><a href="404.html">March of time</a></li>
-						<li><a href="{% url 'home:history' %}#courseArchive">Principles</a></li>
-						<li><a href="#">Prefects</a></li>               
+						<li><a href="404.html">{% trans "March of time" %}</a></li>
+						<li><a href="{% url 'home:history' %}#courseArchive">{% trans "Principles" %}</a></li>
+						<li><a href="#">{% trans "Prefects" %}</a></li>               
 					  </ul>
 					</li>               
 					<li class="dropdown">
-					  <a href="{% url 'home:academic' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Academic<span class="caret"></span></a>
+					  <a href="{% url 'home:academic' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{% trans "Academic" %}<span class="caret"></span></a>
 					  <ul class="dropdown-menu" role="menu">
-						<li><a href="404.html">Subjects</a></li>
-						<li><a href="#">Results</a></li>
-						<li><a href="#">Staffs</a></li>               
+						<li><a href="404.html">{% trans "Subjects" %}</a></li>
+						<li><a href="#">{% trans "Results" %}</a></li>
+						<li><a href="#">{% trans "Staffs" %}</a></li>               
 					  </ul>
 					</li>               
 					<li class="dropdown">
-					  <a href="{% url 'home:achievements' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Achievements<span class="caret"></span></a>
+					  <a href="{% url 'home:achievements' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{% trans "Achievements" %}<span class="caret"></span></a>
 					  <ul class="dropdown-menu" role="menu">
-						<li><a href="404.html">Academic</a></li>
-						<li><a href="#">Sports</a></li>
-						<li><a href="#">Extra-curricular</a></li>               
+						<li><a href="404.html">{% trans "Academic" %}</a></li>
+						<li><a href="#">{% trans "Sports" %}</a></li>
+						<li><a href="#">{% trans "Extra-curricular" %}</a></li>               
 					  </ul>
 					</li>               
 					<li class="dropdown">
-					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Games & Sports<span class="caret"></span></a>
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{% trans "Games & Sports" %}<span class="caret"></span></a>
 					  <ul class="dropdown-menu" role="menu">
-						<li><a href="404.html">Academic</a></li>
-						<li><a href="#">Sports</a></li>
-						<li><a href="#">Extra-curricular</a></li>               
+						<li><a href="404.html">{% trans "Academic" %}</a></li>
+						<li><a href="#">{% trans "Sports" %}</a></li>
+						<li><a href="#">{% trans "Extra-curricular" %}</a></li>               
 					  </ul>
 					</li>               
-					<li><a href="{% url 'home:academic' %}">Management</a></li>
-					<li><a href="{% url 'home:events' %}">Extra-Curricular</a></li>
+					<li><a href="{% url 'home:home' %}">{% trans "Management" %}</a></li>
+					<li><a href="{% url 'home:events' %}">{% trans "Extra-Curricular" %}</a></li>
 				  </ul>           
 				</div><!--/.nav-collapse -->
 			</div>
@@ -213,22 +213,22 @@
           <div class="row">
             <div class="col-ld-3  col-md-3 col-sm-3">
               <div class="single_footer_widget">
-                <h3>About Us</h3>
+                <h3>{% trans "About Us" %}</h3>
                 <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
               </div>
             </div>
             <div class="col-ld-3  col-md-3 col-sm-3">
               <div class="single_footer_widget">
-                <h3>Community</h3>
+                <h3>{% trans "Community" %}</h3>
                 <ul class="footer_widget_nav">
-                  <li><a href="#">Our Tutors</a></li>
-                  <li><a href="#">Our Students</a></li>
+                  <li><a href="#">{% trans "Our Tutors" %}</a></li>
+                  <li><a href="#">{% trans "Our Students" %}</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-ld-3  col-md-3 col-sm-3">
               <div class="single_footer_widget">
-                <h3>Others</h3>
+                <h3>{% trans "Others" %}</h3>
                 <ul class="footer_widget_nav">
                   <li><a href="#">Link 1</a></li>
                   <li><a href="#">Link 2</a></li>
@@ -237,7 +237,7 @@
             </div>
             <div class="col-ld-3  col-md-3 col-sm-3">
               <div class="single_footer_widget">
-                <h3>Social Links</h3>
+                <h3>{% trans "Social Links" %}</h3>
                 <ul class="footer_social">
                   <li><a data-toggle="tooltip" data-placement="top" title="Facebook" class="soc_tooltip" href="#"><i class="fa fa-facebook"></i></a></li>
                   <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip"  href="#"><i class="fa fa-twitter"></i></a></li>
@@ -298,4 +298,3 @@
     <script src="{% static 'js/custom.js' %}"></script>
   </body>
 </html>
-
